@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link type="text/css" rel="stylesheet" href="/syntaxhighlighter_3.0.83/styles/shCoreDefault.css"/>
+  <link rel="stylesheet" href="/css/application.css">
+  <title></title>
+</head>
+<body>
+  
+  <%= erb :_navbar, :layout => false %>
+  
+  <%= yield %>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script src="/syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+  <script src="/syntaxhighlighter_3.0.83/scripts/shBrushRuby.js"></script>
+  <script type="text/javascript">SyntaxHighlighter.all();</script>
+  <script src="/js/holder.js"></script>
+  <script src="/js/application.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,41 @@
+<% if session[:error] %>
+  <h2>Errors</h2>
+  <ol>
+    <% session[:error].each do |attr, error_msg|  %>
+      <li><%= attr %>:<%= error_msg.join(", ") %></li>
+    <% end %>
+  </ol>
+<% end %>
+
+<%= display_error %>
+
+<div class="container new-form">
+
+  <form role="form" action="/posts" method="POST">
+    <div class="form-group">
+      <label for="inputTitle">Post Title</label>
+      <input name="post[title]" type="Title" class="form-control" id="exampleInputEmail1" placeholder="Enter the title of your awesome post">
+    </div>
+
+    <div class="form-group">
+      <label for="inputCode">Code</label>
+      <textarea name="post[code]" class="form-control" rows="3"></textarea>
+    </div>
+  
+    <div class="form-group">
+      <select name="language">
+        <option value="Ruby">Ruby</option>
+        <option value="JavaScript">JavaScript</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="inputAnnotation">Annotations</label>
+      <textarea name="post[annotations]" class="form-control" rows="3"></textarea>
+    </div>
+
+
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+
+</div>

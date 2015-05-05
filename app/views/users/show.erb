@@ -1,0 +1,18 @@
+<div class="container">
+  
+<div class="row">
+  <h1><%= @user.name %></h1>
+  <h2><%= @user.username %></h2>
+  <h3>Email: <%= @user.email %></h3>
+</div>
+
+  <% @user.posts.each do |post| %>
+    <div class="row list-group">
+      <a href="/posts/<%= post.id %>"><h3><%= post.title %></h3></a>            
+      <p><%= post.user.name %></p>
+      <small><%= post.created_at.strftime("%B %d, %Y") %></small>   
+      <hr>
+    </div>
+  <% end %>
+
+</div>

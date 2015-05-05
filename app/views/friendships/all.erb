@@ -1,0 +1,5 @@
+<ul>
+	<% @friends.each do |friend| %>
+		<li><a href="/users/<%= friend.id %>"><%= friend.name %></a></li>
+	<% end %>
+</ul>

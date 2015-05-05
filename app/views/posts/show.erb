@@ -1,0 +1,18 @@
+<div class="container">
+	<a href="/posts">Posts</a>
+  <h1><%= @post.title %></h1>
+  <h2><%= @post.user.name %></h2>
+  <h3>Code</h3>
+  <p> 
+    <pre class="brush: ruby;">
+      <%= @post.code %>
+    </pre>
+  </p>
+  <% if current_user == @post.user.name %>
+  <small><a class="edit" href='/posts/<%= @post.id %>/edit'>Edit</a></small>
+  <form action="/posts/<%= @post.id %>" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="DELETE">
+  </form>
+  <% end %>
+</div>

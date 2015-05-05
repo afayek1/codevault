@@ -1,0 +1,30 @@
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#loginModal">Login
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="containter login">
+
+    <div class="container"><!-- sign in -->    
+      <form class="form-signin" method="post" action="/login">
+        <h2 class="form-signin-heading">Please Sign In.</h2>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+
+        <button class="btn btn-lg btn-primary btn-block" type="button" data-dismiss="modal">Cancel</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+      </form>
+    </div><!-- sign in -->
+
+
+  </div>
+</div>

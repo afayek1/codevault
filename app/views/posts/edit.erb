@@ -1,0 +1,23 @@
+<div class="container">
+
+  <form role="form" action="/posts/<%= @post.id %>" method="POST">
+    <input type="hidden" name="_method" value="put">
+    <div class="form-group">
+      <label for="inputTitle">Post Title</label>
+      <textarea name="post[title]" type="Title" class="form-control" id="exampleInputEmail1" placeholder="Enter the title of your awesome post"><%= @post.title %></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="inputCode">Code</label>
+      <textarea name="post[code]" class="form-control" rows="3"><%= @post.code %></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="inputAnnotation">Annotations</label>
+      <textarea name="post[annotations]" class="form-control" rows="3"><%= @post.annotations %></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-default">Update</button>
+  </form>
+
+</div>

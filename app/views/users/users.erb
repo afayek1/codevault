@@ -1,0 +1,10 @@
+<div class="container add-friends">
+	<ul class="list-group">
+		<% @user.each do |user| %>
+			<li id="<%= user.id %>" class="list-group-item">
+				<a href="/users/<%= user.id %>"><%= user.name %></a>
+				<a class="add-friend right">Add Friend</a>
+			</li>
+		<% end %>
+	</ul>
+</div>

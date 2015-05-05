@@ -1,0 +1,15 @@
+<div class="container posts">
+  <%= will_paginate @posts %>
+  
+  <% @posts.each do |post| %>
+    <div class="row list-group">
+      <a href="/posts/<%= post.id %>"><h3><%= post.title %></h3></a>            
+      <p><%= post.user.name %></p>
+      <small><%= post.created_at.strftime("%B %d, %Y") %></small>   
+      <hr>
+    </div>
+  <% end %>
+
+  <%= will_paginate @posts %>
+
+</div>
