@@ -1,18 +1,35 @@
-<div class="container">
-	<a href="/posts">Posts</a>
+<div class="container post">
   <h1><%= @post.title %></h1>
-  <h2><%= @post.user.name %></h2>
+  <p>By: <%= @post.user.name %> </p>
+  <p class="small">Posted: <%= format_time(@post.updated_at) %></p>
+  <hr>
+  
   <h3>Code</h3>
   <p> 
     <pre class="brush: ruby;">
       <%= @post.code %>
     </pre>
   </p>
-  <% if current_user == @post.user.name %>
-  <small><a class="edit" href='/posts/<%= @post.id %>/edit'>Edit</a></small>
+
+  <h3>Description</h3>
+  <p>
+    <%= @post.annotations %>
+  </p>
+
+  
+  <% if current_user.id == @post.user.id %>
+  <small><a class="delete" href='/posts/<%= @post.id %>/edit'>Edit</a></small>
   <form action="/posts/<%= @post.id %>" method="POST">
     <input type="hidden" name="_method" value="DELETE">
-    <input type="submit" value="DELETE">
+    <button class="btn btn-danger" type="submit" value="DELETE">Delete</button>
   </form>
   <% end %>
+
+  <h3>Comments</h3>
+  <% @comments.each do |comment| %>
+    <div>
+      <p><%= comment.content %></p>
+    </div>
+  <% end %>
+
 </div>

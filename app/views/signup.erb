@@ -1,9 +1,11 @@
 <div class="container login">
     <div class="container"> 
-
+    
     <form class="form-signin" method="post" action="/users">
       <h2 class="form-signin-heading">Create an Account!</h2>
-      
+      <% if @errors %>
+      <p><%= @errors %></p>
+      <% end %>
       <label for="inputName" class="sr-only">Name</label>
       <input name="name" type="text" id="inputName" class="form-control" placeholder="Name" required>
 
