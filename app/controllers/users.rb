@@ -13,6 +13,7 @@ post '/users' do
 	  login @user
 	  redirect to '/'
 	else
+    errors = @user.errors.messages
 	  erb :'signup'
 	end
 end
