@@ -19,6 +19,7 @@ end
 
 get '/posts/:id' do |id|
 	@post = Post.find(id)
+  @comments = @post.comments
 	erb :'/posts/show'
 end
 
