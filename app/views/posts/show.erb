@@ -3,20 +3,14 @@
   <p>By: <%= @post.user.name %> </p>
   <p class="small">Posted: <%= format_time(@post.updated_at) %></p>
   <hr>
-  
+
   <h3>Code</h3>
-  <p> 
-    <pre class="brush: ruby;">
-      <%= @post.code %>
-    </pre>
-  </p>
+  <p><pre class="brush: ruby;"><%= @post.code %></pre></p>
 
   <h3>Description</h3>
-  <p>
-    <%= @post.annotations %>
-  </p>
+  <p><%= @post.annotations %></p>
 
-  
+
   <% if current_user.id == @post.user.id %>
   <small><a class="delete" href='/posts/<%= @post.id %>/edit'>Edit</a></small>
   <form action="/posts/<%= @post.id %>" method="POST">
@@ -26,10 +20,21 @@
   <% end %>
 
   <h3>Comments</h3>
-  <% @comments.each do |comment| %>
+  <%= erb :'comments/new', :layout => false %>
+  <div class="comments">
+    <% @comments.each do |comment| %>
     <div>
       <p><%= comment.content %></p>
     </div>
-  <% end %>
-
+    <% end %>
+  </div>
 </div>
+
+<script type="text/template" id="comment-template">
+  <div>
+    <p><%%= content %></p>
+  </div>
+  <% if current_user %>
+  <button>Delete</button>
+  <% end %>
+</script>

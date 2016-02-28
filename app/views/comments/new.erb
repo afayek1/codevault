@@ -1,0 +1,6 @@
+<form class="form comment-form" action="/posts/<%= @post.id %>/comments" method="POST">
+  <input type="hidden" value="<%= @post.id %>">
+  <label for="content"></label>
+  <input name="comment[content]" type="text">
+  <button type="submit">Add Comment</button>
+</form>
