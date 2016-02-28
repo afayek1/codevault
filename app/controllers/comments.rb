@@ -1,12 +1,11 @@
 post '/posts/:id/comments' do |id|
   post = Post.find(id)
   p params
-  comment = Comment.new(params[:comment])
+  comment = current_user.comments.build(params[:comment])
   if comment.save
     post.comments << comment
     if request.xhr?
-      # erb :'comments/_comment', :layout => false
-      comment.to_json
+      comment.to_json(:include => {:user => {:only => :username}})
     else
       redirect '/posts/' + id
     end
