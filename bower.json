@@ -1,0 +1,25 @@
+{
+  "name": "codevault",
+  "description": "CodeVault is a social media app to store and share code you’ve written with language specific highlighting and your favorite editor themes.",
+  "main": "index.js",
+  "authors": [
+    "Amir Fayek <afayek88@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/afayek1/codevault",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.1",
+    "bootstrap": "^3.3.6",
+    "underscore": "^1.8.3",
+    "tether": "^1.2.0"
+  }
+}

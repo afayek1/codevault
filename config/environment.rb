@@ -17,6 +17,7 @@ require 'logger'
 
 require 'sinatra'
 require "sinatra/reloader" if development?
+require 'sinatra/assetpack'
 
 require 'erb'
 
@@ -51,6 +52,25 @@ configure do
 
   # Set the views to
   set :views, File.join(Sinatra::Application.root, "app", "views")
+end
+
+
+# register Sinatra::AssetPack
+# add_import_path "bower_components/foundation/scss" # unchanged
+
+assets do
+  serve '/bower_components', from: 'bower_components'
+  js :libs, [
+    '/bower_components/jquery/dist/jquery.js',
+    '/bower_components/tether/dist/js/tether.min.js',
+    '/bower_components/bootstrap/dist/js/bootstrap.min.js',
+    '/bower_components/underscore/underscore-min.js'
+  ]
+
+  css :libs, [
+    '/bower_components/tether/dist/css/tether.min.css',
+    '/bower_components/bootstrap/dist/css/bootstrap.min.css'
+  ]
 end
 
 # Set up the controllers and helpers
